@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-color: #1a1a1a;
+  font-family: 'Special Elite', cursive;
+  overflow: hidden; /* Prevent scrolling of the workspace */
+  touch-action: none; /* Prevent browser gestures interfering with drag */
+}
+
+.font-digital {
+  font-family: 'VT323', monospace;
+}
+
+/* Custom scrollbar for the machine input */
+.retro-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.retro-scrollbar::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+.retro-scrollbar::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+.retro-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
