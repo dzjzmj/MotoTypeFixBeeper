@@ -1,0 +1,5 @@
+{
+  "name": "MotoType Fix Beeper",
+  "description": "A retro-styled typewriter application that generates draggable, animated message cards with a nostalgic typing effect.",
+  "requestFramePermissions": []
+}
