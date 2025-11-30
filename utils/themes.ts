@@ -2,104 +2,124 @@
 import { ThemeConfig } from '../types';
 
 export const themes: Record<string, ThemeConfig> = {
-  retro: {
-    id: 'retro',
-    name: 'Retro Dark',
-    appBg: 'bg-zinc-900',
-    gridColor: '#444',
-    textColor: 'text-zinc-500',
-    accentColor: 'text-amber-600',
+  pink: {
+    id: 'pink',
+    name: 'Macaron Pink',
+    appBg: 'bg-rose-50',
+    gridColor: '#fda4af', // rose-300
+    textColor: 'text-rose-500',
+    accentColor: 'text-rose-600',
     machine: {
-      body: 'bg-[#2a2a2a]',
-      border: 'border-[#1a1a1a]',
-      screen: 'bg-[#151515] border-[#333]',
-      screenText: 'text-amber-500',
-      placeholder: 'placeholder-amber-900/50',
-      label: 'text-[#444]',
-      controlsBg: 'bg-[#111] border-[#333]',
-      button: 'bg-[#333] text-gray-400 hover:bg-[#444] hover:text-white border-[#222]',
-      buttonPrimary: 'bg-amber-700 text-amber-100 hover:bg-amber-600 hover:text-white border-amber-900',
-      decorationBar: 'bg-[#111]'
+      body: 'bg-rose-100',
+      border: 'border-rose-200',
+      screen: 'bg-white border-rose-200',
+      screenText: 'text-rose-600',
+      placeholder: 'placeholder-rose-300',
+      label: 'text-rose-400',
+      controlsBg: 'bg-rose-50 border-rose-200',
+      button: 'bg-white text-rose-400 hover:bg-rose-200 hover:text-rose-600 border-rose-200',
+      buttonPrimary: 'bg-rose-400 text-white hover:bg-rose-500 border-rose-500',
+      decorationBar: 'bg-rose-200'
     }
   },
-  light: {
-    id: 'light',
-    name: 'Office Light',
-    appBg: 'bg-stone-100',
-    gridColor: '#d6d3d1',
-    textColor: 'text-stone-500',
-    accentColor: 'text-stone-700',
+  matcha: {
+    id: 'matcha',
+    name: 'Matcha Green',
+    appBg: 'bg-[#f1f8e9]', // Light grayish green
+    gridColor: '#dcedc8',
+    textColor: 'text-[#558b2f]', // Darker olive green
+    accentColor: 'text-[#33691e]',
     machine: {
-      body: 'bg-stone-200',
-      border: 'border-stone-300',
-      screen: 'bg-white border-stone-300',
-      screenText: 'text-stone-800',
-      placeholder: 'placeholder-stone-300',
-      label: 'text-stone-400',
-      controlsBg: 'bg-stone-100 border-stone-300',
-      button: 'bg-stone-100 text-stone-500 hover:bg-white hover:text-stone-700 border-stone-300',
-      buttonPrimary: 'bg-stone-600 text-stone-100 hover:bg-stone-700 hover:text-white border-stone-800',
-      decorationBar: 'bg-stone-300'
+      body: 'bg-[#dcedc8]',
+      border: 'border-[#c5e1a5]',
+      screen: 'bg-[#f9fbe7] border-[#c5e1a5]',
+      screenText: 'text-[#558b2f]',
+      placeholder: 'placeholder-[#9ccc65]',
+      label: 'text-[#7cb342]',
+      controlsBg: 'bg-[#f1f8e9] border-[#c5e1a5]',
+      button: 'bg-[#f9fbe7] text-[#558b2f] hover:bg-[#dcedc8] hover:text-[#33691e] border-[#c5e1a5]',
+      buttonPrimary: 'bg-[#8bc34a] text-white hover:bg-[#7cb342] border-[#689f38]',
+      decorationBar: 'bg-[#c5e1a5]'
     }
   },
-  cyber: {
-    id: 'cyber',
-    name: 'Cyberpunk',
-    appBg: 'bg-slate-900',
-    gridColor: '#0ea5e9',
-    textColor: 'text-cyan-600',
-    accentColor: 'text-pink-500',
+  blue: {
+    id: 'blue',
+    name: 'Sky Blue',
+    appBg: 'bg-sky-50',
+    gridColor: '#bae6fd', // sky-200
+    textColor: 'text-sky-600',
+    accentColor: 'text-sky-700',
     machine: {
-      body: 'bg-slate-800',
-      border: 'border-cyan-900',
-      screen: 'bg-slate-950 border-cyan-800',
-      screenText: 'text-cyan-400',
-      placeholder: 'placeholder-cyan-900/50',
-      label: 'text-cyan-900',
-      controlsBg: 'bg-slate-900 border-cyan-900',
-      button: 'bg-slate-900 text-cyan-600 hover:bg-cyan-900/30 hover:text-cyan-300 border-cyan-900',
-      buttonPrimary: 'bg-pink-700 text-pink-100 hover:bg-pink-600 hover:text-white border-pink-900',
-      decorationBar: 'bg-slate-950'
+      body: 'bg-sky-100',
+      border: 'border-sky-200',
+      screen: 'bg-white border-sky-200',
+      screenText: 'text-sky-700',
+      placeholder: 'placeholder-sky-300',
+      label: 'text-sky-500',
+      controlsBg: 'bg-sky-50 border-sky-200',
+      button: 'bg-white text-sky-500 hover:bg-sky-200 hover:text-sky-700 border-sky-200',
+      buttonPrimary: 'bg-sky-400 text-white hover:bg-sky-500 border-sky-500',
+      decorationBar: 'bg-sky-200'
     }
   },
-  blueprint: {
-    id: 'blueprint',
-    name: 'Blueprint',
-    appBg: 'bg-[#004a7c]',
-    gridColor: 'rgba(255,255,255,0.15)',
-    textColor: 'text-blue-200',
-    accentColor: 'text-white',
+  yellow: {
+    id: 'yellow',
+    name: 'Cream Yellow',
+    appBg: 'bg-amber-50',
+    gridColor: '#fde68a', // amber-200
+    textColor: 'text-amber-600',
+    accentColor: 'text-amber-700',
     machine: {
-      body: 'bg-[#005b96]',
-      border: 'border-[#003355]',
-      screen: 'bg-[#003355] border-[#004a7c]',
-      screenText: 'text-white',
-      placeholder: 'placeholder-blue-300/30',
-      label: 'text-blue-300/40',
-      controlsBg: 'bg-[#004a7c] border-[#003355]',
-      button: 'bg-[#003355] text-blue-200 hover:bg-[#004a7c] hover:text-white border-[#002244]',
-      buttonPrimary: 'bg-blue-100 text-[#003355] hover:bg-white hover:text-[#004a7c] border-blue-200',
-      decorationBar: 'bg-[#003355]'
+      body: 'bg-amber-100',
+      border: 'border-amber-200',
+      screen: 'bg-white border-amber-200',
+      screenText: 'text-amber-700',
+      placeholder: 'placeholder-amber-300',
+      label: 'text-amber-500',
+      controlsBg: 'bg-amber-50 border-amber-200',
+      button: 'bg-white text-amber-600 hover:bg-amber-200 hover:text-amber-800 border-amber-200',
+      buttonPrimary: 'bg-amber-400 text-white hover:bg-amber-500 border-amber-500',
+      decorationBar: 'bg-amber-200'
     }
   },
-  coffee: {
-    id: 'coffee',
-    name: 'Coffee Shop',
-    appBg: 'bg-[#3e2723]',
-    gridColor: '#5d4037',
-    textColor: 'text-[#d7ccc8]',
-    accentColor: 'text-orange-300',
+  purple: {
+    id: 'purple',
+    name: 'Lavender Purple',
+    appBg: 'bg-purple-50',
+    gridColor: '#e9d5ff', // purple-200
+    textColor: 'text-purple-600',
+    accentColor: 'text-purple-700',
     machine: {
-      body: 'bg-[#5d4037]',
-      border: 'border-[#3e2723]',
-      screen: 'bg-[#3e2723] border-[#795548]',
-      screenText: 'text-[#ffe0b2]',
-      placeholder: 'placeholder-[#8d6e63]',
-      label: 'text-[#8d6e63]',
-      controlsBg: 'bg-[#4e342e] border-[#3e2723]',
-      button: 'bg-[#4e342e] text-[#bcaaa4] hover:bg-[#5d4037] hover:text-[#efebe9] border-[#3e2723]',
-      buttonPrimary: 'bg-[#d84315] text-orange-50 hover:bg-[#bf360c] border-[#bf360c]',
-      decorationBar: 'bg-[#3e2723]'
+      body: 'bg-purple-100',
+      border: 'border-purple-200',
+      screen: 'bg-white border-purple-200',
+      screenText: 'text-purple-700',
+      placeholder: 'placeholder-purple-300',
+      label: 'text-purple-500',
+      controlsBg: 'bg-purple-50 border-purple-200',
+      button: 'bg-white text-purple-500 hover:bg-purple-200 hover:text-purple-700 border-purple-200',
+      buttonPrimary: 'bg-purple-400 text-white hover:bg-purple-500 border-purple-500',
+      decorationBar: 'bg-purple-200'
+    }
+  },
+  mint: {
+    id: 'mint',
+    name: 'Mint Green',
+    appBg: 'bg-teal-50',
+    gridColor: '#99f6e4', // teal-200
+    textColor: 'text-teal-600',
+    accentColor: 'text-teal-700',
+    machine: {
+      body: 'bg-teal-100',
+      border: 'border-teal-200',
+      screen: 'bg-white border-teal-200',
+      screenText: 'text-teal-700',
+      placeholder: 'placeholder-teal-300',
+      label: 'text-teal-500',
+      controlsBg: 'bg-teal-50 border-teal-200',
+      button: 'bg-white text-teal-500 hover:bg-teal-200 hover:text-teal-700 border-teal-200',
+      buttonPrimary: 'bg-teal-400 text-white hover:bg-teal-500 border-teal-500',
+      decorationBar: 'bg-teal-200'
     }
   }
 };

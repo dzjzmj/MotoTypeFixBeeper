@@ -127,10 +127,10 @@ const DraggableCard: React.FC<DraggableCardProps> = ({
 
   const getBgColor = () => {
     switch (data.color) {
-      case 'yellow': return 'bg-amber-100 border-amber-200';
-      case 'green': return 'bg-green-100 border-green-200';
-      case 'pink': return 'bg-rose-100 border-rose-200';
-      default: return 'bg-neutral-100 border-neutral-200';
+      case 'yellow': return 'bg-amber-100';
+      case 'green': return 'bg-green-100';
+      case 'pink': return 'bg-rose-100';
+      default: return 'bg-neutral-100';
     }
   };
 
@@ -164,12 +164,29 @@ const DraggableCard: React.FC<DraggableCardProps> = ({
     return 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease-out';
   };
   
-  const shadowClass = isDragging ? 'shadow-2xl' : 'shadow-lg';
+  // Use drop-shadow instead of box-shadow to respect the mask shape
+  const shadowClass = isDragging ? 'drop-shadow-2xl' : 'drop-shadow-lg';
+
+  // CSS Mask for jagged edges (sawtooth/torn paper effect)
+  // Teeth size: 14px wide, 8px high.
+  // The center linear-gradient fills the body, leaving 8px at top and bottom for the teeth.
+  const jaggedMask = {
+    WebkitMask: `
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 90deg, #0000 91deg) 50% 100%/14px 8px repeat-x,
+      conic-gradient(from 135deg at top, #0000, #000 1deg 90deg, #0000 91deg) 50% 0%/14px 8px repeat-x,
+      linear-gradient(#000 0 0) 50% 50%/100% calc(100% - 16px) no-repeat
+    `,
+    mask: `
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 90deg, #0000 91deg) 50% 100%/14px 8px repeat-x,
+      conic-gradient(from 135deg at top, #0000, #000 1deg 90deg, #0000 91deg) 50% 0%/14px 8px repeat-x,
+      linear-gradient(#000 0 0) 50% 50%/100% calc(100% - 16px) no-repeat
+    `
+  };
 
   return (
     <div
       ref={cardRef}
-      className={`absolute w-64 md:w-80 min-h-[12rem] flex flex-col p-4 rounded-sm border-2 cursor-grab active:cursor-grabbing select-none ${getBgColor()} ${shadowClass}`}
+      className={`absolute w-64 md:w-80 min-h-[12rem] flex flex-col p-6 cursor-grab active:cursor-grabbing select-none ${getBgColor()} ${shadowClass}`}
       style={{
         left: data.position.x,
         top: data.position.y,
@@ -177,6 +194,7 @@ const DraggableCard: React.FC<DraggableCardProps> = ({
         transform: getTransform(),
         opacity: getOpacity(),
         transition: getTransition(),
+        ...jaggedMask
       }}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}

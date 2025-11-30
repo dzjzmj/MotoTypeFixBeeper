@@ -9,10 +9,12 @@ import { themes } from './utils/themes';
 const App: React.FC = () => {
   const [cards, setCards] = useState<CardData[]>([]);
   const [maxZIndex, setMaxZIndex] = useState(100);
-  const [currentThemeId, setCurrentThemeId] = useState<string>('retro');
+  // Default to the new Macaron Pink theme
+  const [currentThemeId, setCurrentThemeId] = useState<string>('pink');
   const [showThemeMenu, setShowThemeMenu] = useState(false);
 
-  const currentTheme = themes[currentThemeId];
+  // Fallback to first theme if currentThemeId is invalid (e.g. after hot reload)
+  const currentTheme = themes[currentThemeId] || themes['pink'];
 
   // Initialize with a welcome card
   useEffect(() => {
@@ -20,7 +22,7 @@ const App: React.FC = () => {
       id: 'welcome-1',
       text: "Welcome to MotoType Fix.\n\nType in the console below and hit PRINT to generate a message.\n\nDrag this card to clear your workspace.",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      position: { x: Math.max(20, window.innerWidth / 2 - 160), y: Math.max(80, window.innerHeight / 3) },
+      position: { x: Math.max(20, window.innerWidth / 2 - 160), y: Math.max(80, window.innerHeight / 3 - 50) },
       zIndex: 100,
       rotation: -2,
       color: 'yellow'
@@ -34,9 +36,9 @@ const App: React.FC = () => {
 
     const randomRotation = (Math.random() * 6) - 3; 
     
-    // Spawn card logic
-    const startX = window.innerWidth / 2 - 160 + (Math.random() * 40 - 20);
-    const startY = (window.innerHeight / 2) - 150 + (Math.random() * 40 - 20);
+    // Spawn card logic - adjust for smaller machine centering
+    const startX = window.innerWidth / 2 - 140 + (Math.random() * 40 - 20);
+    const startY = (window.innerHeight / 2) - 200 + (Math.random() * 40 - 20);
     const safeY = Math.max(50, startY);
 
     const newCard: CardData = {
@@ -147,7 +149,7 @@ const App: React.FC = () => {
       </div>
 
       {/* Machine Layer */}
-      <div className="absolute bottom-0 w-full flex justify-center pb-0 md:pb-8 z-50 pointer-events-none">
+      <div className="absolute bottom-4 md:bottom-12 w-full flex justify-center z-50 pointer-events-none px-4">
          <Machine onPrint={handlePrint} theme={currentTheme} />
       </div>
 
