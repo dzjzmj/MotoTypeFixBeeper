@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { CardData, Position } from '../types';
 import { playKeySound, playDingSound } from '../utils/sound';
@@ -58,7 +57,7 @@ const DraggableCard: React.FC<DraggableCardProps> = ({
     setIsTypingComplete(false);
     
     let charIndex = 0;
-    let intervalId: NodeJS.Timeout;
+    let intervalId: ReturnType<typeof setInterval>;
 
     // Delay start slightly to allow entrance animation to settle
     const startDelay = setTimeout(() => {
@@ -201,4 +200,15 @@ const DraggableCard: React.FC<DraggableCardProps> = ({
       {/* Content */}
       <div className="flex-grow font-special-elite text-gray-900 leading-relaxed text-lg break-words whitespace-pre-wrap">
         {displayedText}
-        {!isTypingComplete
+        {!isTypingComplete && <span className="inline-block w-2 h-5 bg-black ml-1 animate-pulse align-middle"></span>}
+      </div>
+
+      {/* Footer */}
+      <div className="mt-4 flex justify-end">
+        <span className="font-digital text-xs text-black/40">{data.timestamp}</span>
+      </div>
+    </div>
+  );
+};
+
+export default DraggableCard;
