@@ -4,48 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MotoType Fix</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
-    <style>
-      body {
-        margin: 0;
-        background-color: #1a1a1a;
-        font-family: 'Special Elite', cursive;
-        overflow: hidden; /* Prevent scrolling of the workspace */
-        touch-action: none; /* Prevent browser gestures interfering with drag */
-      }
-      .font-digital {
-        font-family: 'VT323', monospace;
-      }
-      /* Custom scrollbar for the machine input */
-      .retro-scrollbar::-webkit-scrollbar {
-        width: 8px;
-      }
-      .retro-scrollbar::-webkit-scrollbar-track {
-        background: #2d2d2d;
-      }
-      .retro-scrollbar::-webkit-scrollbar-thumb {
-        background: #4a4a4a;
-        border-radius: 4px;
-      }
-      .retro-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #5a5a5a;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
-  }
-}
-</script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
